@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&family=Syne:wght@700;800&display=swap');
 
 :root {
   --bg-main: #0a0607;
@@ -6,17 +6,17 @@
   --bg-card-hover: #221216;
   --accent-crimson: #e63946;
   --accent-maroon: #9b1d20;
-  --accent-glow: rgba(230, 57, 70, 0.35);
+  --accent-glow: rgba(230, 57, 70, 0.45);
   --text-main: #f8f9fa;
-  --text-muted: #b0a4a6;
-  --border-subtle: rgba(230, 57, 70, 0.15);
+  --text-muted: #b8abae;
+  --border-subtle: rgba(230, 57, 70, 0.2);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -26,6 +26,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Header & Navigation */
 header {
   position: fixed;
   top: 0;
@@ -34,6 +35,7 @@ header {
   backdrop-filter: blur(16px);
   z-index: 999;
   border-bottom: 1px solid var(--border-subtle);
+  animation: fadeInDown 0.8s ease-out forwards;
 }
 
 nav {
@@ -43,15 +45,18 @@ nav {
   padding: 18px 8%;
 }
 
+/* Top-Left Logo Font & Style */
 .logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 28px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.5px;
+  color: var(--text-main);
 }
 
 .logo span {
   color: var(--accent-crimson);
+  font-family: inherit;
 }
 
 .nav-links {
@@ -63,73 +68,89 @@ nav {
   margin-left: 35px;
 }
 
+/* Nav Links Color & Hover */
 .nav-links a {
-  color: var(--text-muted);
+  color: #ffb4be; /* Soft crimson tinted text */
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.5px;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--accent-crimson);
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .menu-btn {
   display: none;
   font-size: 28px;
   cursor: pointer;
+  color: var(--text-main);
 }
 
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 130px 10% 80px;
-  background: radial-gradient(circle at 50% 30%, #380d14 0%, #150608 55%, var(--bg-main) 100%);
+  background: radial-gradient(circle at 50% 35%, #3c0c14 0%, #150608 60%, var(--bg-main) 100%);
 }
 
 .profile-img {
-  width: 165px;
-  height: 165px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent-crimson);
   display: block;
   margin: 0 auto 25px auto;
   box-shadow: 0 0 35px var(--accent-glow);
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
+/* Hero Heading ("Hello, I'm Adharsh A") */
 .hero h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: 58px;
-  font-weight: 800;
-  margin-bottom: 16px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 14px;
   letter-spacing: -1px;
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
 }
 
 .hero h1 span {
+  font-family: inherit;
   color: var(--accent-crimson);
   text-shadow: 0 0 25px var(--accent-glow);
 }
 
 .hero h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 22px;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin-bottom: 22px;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #ffcbd1;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
 
 .hero p {
   max-width: 680px;
   margin: auto;
   line-height: 1.8;
-  font-size: 17px;
+  font-size: 16.5px;
   color: var(--text-muted);
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
 }
 
 .btn {
@@ -143,24 +164,27 @@ nav {
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: 0.3s ease;
-  box-shadow: 0 4px 20px var(--accent-glow);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 25px var(--accent-glow);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(230, 57, 70, 0.6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 35px rgba(230, 57, 70, 0.7);
 }
 
+/* Sections */
 section {
   padding: 100px 10%;
 }
 
 section h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   text-align: center;
   font-size: 38px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 50px;
   color: var(--accent-crimson);
   letter-spacing: -0.5px;
@@ -169,7 +193,7 @@ section h2 {
 .about p {
   max-width: 880px;
   margin: auto;
-  font-size: 18px;
+  font-size: 17.5px;
   line-height: 1.85;
   text-align: center;
   color: var(--text-muted);
@@ -220,7 +244,7 @@ section h2 {
 }
 
 .project-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   margin-bottom: 14px;
   color: var(--accent-crimson);
   font-size: 22px;
@@ -281,8 +305,31 @@ footer {
   text-align: center;
   background: #050304;
   border-top: 1px solid var(--border-subtle);
-  color: #6d5b5e;
+  color: #7d686b;
   font-size: 14px;
+}
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .reveal {
