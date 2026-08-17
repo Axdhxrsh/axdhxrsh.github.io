@@ -377,3 +377,58 @@ footer {
     font-size: 19px;
   }
 }
+/* --- Aesthetic Avatar & Glow --- */
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.profile-wrapper .glow-ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-crimson), #40050d);
+  filter: blur(14px);
+  opacity: 0.7;
+  z-index: 0;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.profile-img {
+  position: relative;
+  z-index: 1;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(230, 57, 70, 0.8);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-wrapper:hover .profile-img {
+  transform: scale(1.04);
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  100% { transform: scale(1.06); opacity: 0.9; }
+}
+
+/* --- Typing Cursor Effect --- */
+.cursor {
+  display: inline-block;
+  color: var(--accent-crimson);
+  font-weight: 300;
+  animation: blinkCursor 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
