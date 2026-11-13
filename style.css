@@ -427,7 +427,28 @@ footer {
   animation: blinkCursor 0.8s infinite;
   margin-left: 2px;
 }
+/* Monkeytype Skill Card Styling */
+.monkeytype-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  grid-column: span 2; /* Makes it slightly wider if your grid allows, or keep it standard */
+}
 
+.typing-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff; /* Adjust based on your theme */
+}
+
+.monkeytype-img {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}
 @keyframes blinkCursor {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
