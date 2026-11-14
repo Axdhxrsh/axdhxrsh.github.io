@@ -11,7 +11,6 @@
   --accent-glow: rgba(214, 148, 179, 0.5);
   
   --text-main: #FFFFFF;
-  /* Made the muted text much brighter/whiter for readability */
   --text-muted: #D8D2DF; 
   
   --border-glass: rgba(255, 255, 255, 0.07);
@@ -133,13 +132,14 @@ nav {
   display: inline-block;
 }
 
+/* UPDATED IMAGE SHAPE STYLING */
 .profile-wrapper .glow-ring {
   position: absolute;
   top: -6px;
   left: -6px;
   right: -6px;
   bottom: -6px;
-  border-radius: 50%;
+  border-radius: 36px; /* Squircle shape */
   background: var(--accent-gradient);
   filter: blur(16px);
   opacity: 0.8;
@@ -147,13 +147,12 @@ nav {
   animation: pulseGlow 3s ease-in-out infinite alternate;
 }
 
-/* Image fixes to stay perfectly round */
 .profile-img {
   position: relative;
   z-index: 1;
   width: 180px;
   height: 180px;
-  border-radius: 50%;
+  border-radius: 32px; /* Squircle shape */
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 35px var(--accent-glow), inset 0 0 20px var(--accent-glow);
@@ -188,12 +187,11 @@ nav {
   text-shadow: 0 0 15px var(--accent-glow);
 }
 
-/* Brightened Paragraph Text */
 p {
   line-height: 1.8;
   font-size: 16px;
   color: var(--text-muted);
-  font-weight: 400; /* Made slightly heavier for readability */
+  font-weight: 400; 
 }
 
 .btn, button {
@@ -233,7 +231,6 @@ section h2 {
   text-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 
-/* NEW: About Section Card */
 .about-content {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
@@ -385,7 +382,6 @@ section h2 {
 
 .contact-info p { margin-bottom: 25px; }
 
-/* NEW: App Icon Social Links */
 .social-links {
   display: flex;
   gap: 20px;
@@ -399,7 +395,7 @@ section h2 {
   height: 55px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-highlight);
-  border-radius: 16px; /* Squircle app icon shape */
+  border-radius: 16px; 
   color: var(--text-main);
   font-size: 24px;
   text-decoration: none;
@@ -474,7 +470,6 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* MOBILE FIXES */
 @media(max-width: 768px) {
   .menu-btn { display: block; }
   
@@ -494,7 +489,6 @@ footer {
 
   .nav-links li { margin: 10px 0; }
 
-  /* Fixed Hero stacking to put Image on top */
   .hero {
     flex-direction: column;
     justify-content: center;
@@ -504,7 +498,7 @@ footer {
   }
   
   .hero-image {
-    order: -1; /* This forces the profile picture to the very top on phones */
+    order: -1; 
     justify-content: center;
   }
 
