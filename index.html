@@ -18,7 +18,8 @@
 
 <header>
     <nav>
-        <h2 class="logo">Adharsh<span>.</span></h2>
+        <!-- REPLACED LOGO WITH ICON & TEXT -->
+        <h2 class="logo"><i class="fa-solid fa-layer-group"></i><span> Portfolio</span></h2>
 
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -28,7 +29,8 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="menu-btn">&#9776;</div>
+        <!-- Hamburger Menu Button -->
+        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
 
     </nav>
 </header>
@@ -42,9 +44,7 @@
       <span class="typewriter-text"></span><span class="cursor">|</span>
     </h3>
 
-    <p>
-      Currently studying First Year Integrated M.Sc Artificial Intelligence at Cochin University of Science and Technology (CUSAT). Passionate about AI, Machine Learning, Web Development and solving real-world problems through technology.
-    </p>
+    <!-- REMOVED DUPLICATE PARAGRAPH HERE -->
 
     <a href="#contact" class="btn">Contact Me</a>
   </div>
@@ -53,14 +53,13 @@
     <!-- Glowing Profile Avatar -->
     <div class="profile-wrapper">
       <div class="glow-ring"></div>
-      <!-- CHANGE YOUR IMAGE NAME HERE WHEN READY -->
       <img src="IMG_20260513_085246_114.jpg" alt="Adharsh A" class="profile-img" />
     </div>
   </div>
 
 </section>
 
-<!-- Updated About Section wrapped in a glass card -->
+<!-- About Section (Kept the paragraph here) -->
 <section id="about" class="about reveal">
   <h2>About Me</h2>
   <div class="about-content">
@@ -144,7 +143,7 @@
           <a href="https://github.com/Axdhxrsh" target="_blank" class="social-btn app-icon" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
-        </div> <!-- FIXED TYPO HERE -->
+        </div> 
       </div>
 
       <form>
@@ -160,6 +159,23 @@
 <footer>
   <p>© 2026 Adharsh A | CUSAT Student | Made with ❤️</p>
 </footer>
+
+<!-- NEW: JavaScript to make the Mobile Hamburger Menu Work -->
+<script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Closes the menu automatically when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
 
 <script src="script.js"></script>
 
