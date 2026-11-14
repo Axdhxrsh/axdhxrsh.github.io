@@ -1,26 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Core Colors */
-  --bg-main: #0B0A10; /* Deeper, truer black for contrast */
-  
-  /* Glassmorphism Card Backgrounds (Semi-transparent) */
+  --bg-main: #0B0A10; 
   --bg-card: rgba(32, 28, 43, 0.45);
   --bg-card-hover: rgba(45, 38, 59, 0.65);
   
-  /* Accents (Mauve & Peach) */
   --accent-primary: #D694B3;
   --accent-secondary: #F4B29E;
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   --accent-glow: rgba(214, 148, 179, 0.5);
   
-  /* Text */
-  --text-main: #F7F5FA;
-  --text-muted: #948B9E;
+  --text-main: #FFFFFF;
+  /* Made the muted text much brighter/whiter for readability */
+  --text-muted: #D8D2DF; 
   
-  /* Light-catching borders for Glass effect */
   --border-glass: rgba(255, 255, 255, 0.07);
-  --border-highlight: rgba(255, 255, 255, 0.15); /* Simulates light hitting the top edge */
+  --border-highlight: rgba(255, 255, 255, 0.15); 
 }
 
 * {
@@ -31,7 +26,6 @@
   scroll-behavior: smooth;
 }
 
-/* Ambient Background Lighting */
 body {
   background-color: var(--bg-main);
   background-image: 
@@ -43,7 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Frosted Glass Header */
 header {
   position: fixed;
   top: 0;
@@ -75,10 +68,9 @@ nav {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 12px var(--accent-glow)); /* Glowing logo dot */
+  filter: drop-shadow(0 0 12px var(--accent-glow));
 }
 
-/* Dashboard-style Pill Nav */
 .nav-links {
   display: flex;
   list-style: none;
@@ -90,9 +82,7 @@ nav {
   box-shadow: inset 0 1px 1px rgba(255,255,255,0.05);
 }
 
-.nav-links li {
-  margin: 0 10px;
-}
+.nav-links li { margin: 0 10px; }
 
 .nav-links a {
   color: var(--text-muted);
@@ -117,22 +107,30 @@ nav {
   color: var(--text-main);
 }
 
-/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
   padding: 130px 10% 80px;
+  text-align: left;
 }
 
-/* Glowing Profile Avatar */
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .profile-wrapper {
   position: relative;
   display: inline-block;
-  margin-bottom: 25px;
 }
 
 .profile-wrapper .glow-ring {
@@ -149,14 +147,16 @@ nav {
   animation: pulseGlow 3s ease-in-out infinite alternate;
 }
 
+/* Image fixes to stay perfectly round */
 .profile-img {
   position: relative;
   z-index: 1;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 35px var(--accent-glow), inset 0 0 20px var(--accent-glow);
   display: block;
 }
 
@@ -165,7 +165,6 @@ nav {
   100% { transform: scale(1.05); opacity: 0.9; }
 }
 
-/* Illuminated Headings */
 .hero h1 {
   font-size: 56px;
   font-weight: 800;
@@ -178,7 +177,7 @@ nav {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 15px var(--accent-glow)); /* Deep text glow */
+  filter: drop-shadow(0 0 15px var(--accent-glow));
 }
 
 .hero h3 {
@@ -189,26 +188,25 @@ nav {
   text-shadow: 0 0 15px var(--accent-glow);
 }
 
-.hero p {
-  max-width: 650px;
-  margin: auto;
+/* Brightened Paragraph Text */
+p {
   line-height: 1.8;
   font-size: 16px;
   color: var(--text-muted);
+  font-weight: 400; /* Made slightly heavier for readability */
 }
 
-/* Glowing Pill Button */
 .btn, button {
   display: inline-block;
   margin-top: 35px;
   padding: 16px 36px;
   background: var(--accent-gradient);
-  color: #000; /* High contrast */
+  color: #000;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
-  border: 1px solid rgba(255,255,255,0.4); /* Glassy shine on button */
+  border: 1px solid rgba(255,255,255,0.4);
   box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 8px 25px var(--accent-glow);
   transition: 0.3s ease;
   cursor: pointer;
@@ -220,13 +218,11 @@ nav {
   filter: brightness(1.15);
 }
 
-/* Sections */
 section {
   padding: 100px 10%;
   position: relative;
 }
 
-/* Glowing Section Titles */
 section h2 {
   text-align: center;
   font-size: 38px;
@@ -237,16 +233,24 @@ section h2 {
   text-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 
-.about p {
+/* NEW: About Section Card */
+.about-content {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--border-glass);
+  border-top: 1px solid var(--border-highlight);
   max-width: 800px;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.8;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   text-align: center;
-  color: var(--text-muted);
 }
 
-/* True Glassmorphism Cards */
+.about-content p {
+  font-size: 18px;
+}
+
 .skill-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -256,19 +260,18 @@ section h2 {
 .card {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   padding: 28px;
   border-radius: 24px;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   color: var(--text-main);
-  /* Light catching edges */
   border: 1px solid var(--border-glass);
   border-top: 1px solid var(--border-highlight);
   border-left: 1px solid var(--border-highlight);
   transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .card:hover {
@@ -276,22 +279,16 @@ section h2 {
   background: var(--bg-card-hover);
   border-color: rgba(214, 148, 179, 0.4);
   box-shadow: 0 15px 35px rgba(214, 148, 179, 0.15);
-  text-shadow: 0 0 15px rgba(255,255,255,0.4);
+  text-shadow: 0 0 20px var(--accent-primary), 0 0 30px rgba(255, 255, 255, 0.8); 
 }
 
-/* Typing Stat Card Special Styling */
 .typing-stat-card {
   display: flex;
   align-items: center;
   gap: 20px;
   grid-column: span 2;
   background: linear-gradient(145deg, var(--bg-card), rgba(214, 148, 179, 0.08));
-  backdrop-filter: blur(16px);
-  border-radius: 24px;
-  padding: 25px 30px;
   text-align: left;
-  border: 1px solid var(--border-glass);
-  border-top: 1px solid var(--border-highlight);
 }
 
 .typing-icon {
@@ -304,10 +301,7 @@ section h2 {
   filter: drop-shadow(0 0 10px var(--accent-glow));
 }
 
-.typing-info {
-  display: flex;
-  flex-direction: column;
-}
+.typing-info { display: flex; flex-direction: column; }
 
 .typing-label {
   font-size: 13px;
@@ -322,7 +316,7 @@ section h2 {
   font-weight: 800;
   color: var(--text-main);
   margin: 4px 0;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 15px var(--accent-glow), 0 0 30px var(--accent-primary);
 }
 
 .typing-sub {
@@ -331,7 +325,6 @@ section h2 {
   font-weight: 500;
 }
 
-/* Glass Project Cards */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -366,25 +359,77 @@ section h2 {
   filter: drop-shadow(0 0 10px rgba(214, 148, 179, 0.4));
 }
 
-.project-card p {
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-size: 15px;
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  max-width: 1000px;
+  margin: auto;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--border-glass);
+  border-top: 1px solid var(--border-highlight);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Contact Form */
-.contact form {
-  max-width: 650px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+.contact-info h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
 }
+
+.contact-info p { margin-bottom: 25px; }
+
+/* NEW: App Icon Social Links */
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.app-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-highlight);
+  border-radius: 16px; /* Squircle app icon shape */
+  color: var(--text-main);
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.1), 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.app-icon i {
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.app-icon:hover {
+  background: var(--accent-gradient);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+.app-icon:hover i {
+  color: var(--bg-main);
+  filter: none;
+}
+
+.contact form { width: 100%; }
 
 input, textarea {
+  width: 100%;
   margin-bottom: 20px;
   padding: 18px 22px;
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
   border: 1px solid var(--border-glass);
   border-top: 1px solid var(--border-highlight);
   border-radius: 16px;
@@ -410,7 +455,6 @@ footer {
   font-size: 14px;
 }
 
-/* Animations & Utilities */
 .cursor {
   display: inline-block;
   color: var(--accent-primary);
@@ -430,11 +474,9 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile Responsiveness */
+/* MOBILE FIXES */
 @media(max-width: 768px) {
-  .menu-btn {
-    display: block;
-  }
+  .menu-btn { display: block; }
   
   .nav-links {
     position: absolute;
@@ -450,18 +492,37 @@ footer {
     display: none;
   }
 
-  .nav-links li {
-    margin: 10px 0;
+  .nav-links li { margin: 10px 0; }
+
+  /* Fixed Hero stacking to put Image on top */
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 120px;
+    gap: 30px;
+  }
+  
+  .hero-image {
+    order: -1; /* This forces the profile picture to the very top on phones */
+    justify-content: center;
   }
 
-  .hero h1 {
-    font-size: 40px;
-  }
+  .hero h1 { font-size: 40px; }
   
   .typing-stat-card {
     grid-column: span 1;
     text-align: center;
     flex-direction: column;
     gap: 15px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
