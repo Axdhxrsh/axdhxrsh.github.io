@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adharsh. A | Portfolio</title>
+<title>Adharsh A | Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<!-- FontAwesome for Icons -->
 <script src="https://kit.fontawesome.com/4d4c5d5c2b.js" crossorigin="anonymous"></script>
 
 </head>
@@ -16,7 +18,7 @@
 
 <header>
     <nav>
-        <h2 class="logo">Adharsh.A<span>.</span></h2>
+        <h2 class="logo">Adharsh<span>.</span></h2>
 
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -31,11 +33,10 @@
     </nav>
 </header>
 
-<!-- NEW HERO SECTION (Split Layout) -->
 <section class="hero" id="home">
   
   <div class="hero-content">
-    <h1>Hello, I'm <span>Adharsh. A</span></h1>
+    <h1>Hello, I'm <span>Adharsh A</span></h1>
     
     <h3 class="dynamic-subtitle">
       <span class="typewriter-text"></span><span class="cursor">|</span>
@@ -52,34 +53,32 @@
     <!-- Glowing Profile Avatar -->
     <div class="profile-wrapper">
       <div class="glow-ring"></div>
+      <!-- CHANGE YOUR IMAGE NAME HERE WHEN READY -->
       <img src="IMG_20260513_085246_114.jpg" alt="Adharsh A" class="profile-img" />
     </div>
   </div>
 
 </section>
 
+<!-- Updated About Section wrapped in a glass card -->
 <section id="about" class="about reveal">
-
-<h2>About Me</h2>
-
-<p>
-Hi! I'm <strong>Adharsh A</strong>, a first-year student pursuing an
-Integrated M.Sc in Artificial Intelligence at CUSAT.
-I enjoy learning new technologies, creating modern websites,
-exploring AI concepts, and improving my programming skills.
-My goal is to become an AI Engineer while building innovative applications
-that make people's lives easier.
-</p>
-
+  <h2>About Me</h2>
+  <div class="about-content">
+    <p>
+    Hi! I'm <strong>Adharsh A</strong>, a first-year student pursuing an
+    Integrated M.Sc in Artificial Intelligence at CUSAT.
+    I enjoy learning new technologies, creating modern websites,
+    exploring AI concepts, and improving my programming skills.
+    My goal is to become an AI Engineer while building innovative applications
+    that make people's lives easier.
+    </p>
+  </div>
 </section>
 
-<!-- Skills Section -->
 <section id="skills" class="skills reveal">
     <h2>Skills</h2>
-
     <div class="skill-container">
         
-        <!-- Reliable Native Typing Stat Card (Moved to Top) -->
         <div class="card typing-stat-card">
             <div class="typing-icon"><i class="fas fa-keyboard"></i></div>
             <div class="typing-info">
@@ -102,72 +101,64 @@ that make people's lives easier.
 </section>
     
 <section id="projects" class="projects reveal">
+  <h2>Projects</h2>
+  <div class="project-grid">
 
-<h2>Projects</h2>
+      <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>
+      A responsive portfolio website built using HTML, CSS and JavaScript.
+      </p>
+      </div>
 
-<div class="project-grid">
+      <div class="project-card">
+      <h3>AI Mini Project</h3>
+      <p>
+      Developing AI-based applications as part of academic learning.
+      </p>
+      </div>
 
-    <div class="project-card">
-    <h3>Portfolio Website</h3>
-    <p>
-    A responsive portfolio website built using HTML, CSS and JavaScript.
-    </p>
-    </div>
+      <div class="project-card">
+      <h3>Web Development Practice</h3>
+      <p>
+      Created multiple responsive websites while learning frontend development.
+      </p>
+      </div>
 
-    <div class="project-card">
-    <h3>AI Mini Project</h3>
-    <p>
-    Developing AI-based applications as part of academic learning.
-    </p>
-    </div>
-
-    <div class="project-card">
-    <h3>Web Development Practice</h3>
-    <p>
-    Created multiple responsive websites while learning frontend development.
-    </p>
-    </div>
-
-</div>
-
+  </div>
 </section>
 
-<!-- NEW CONTACT SECTION (With LinkedIn & GitHub) -->
 <section id="contact" class="contact reveal">
-
-<h2>Contact Me</h2>
-
-<div class="contact-container">
-    
-    <div class="contact-info">
-      <h3>Let's Connect!</h3>
-      <p>Feel free to reach out for collaborations, project inquiries, or just a friendly chat about AI and Web Development.</p>
+  <h2>Contact Me</h2>
+  <div class="contact-container">
       
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/adharsh-a-a69348360" target="_blank" class="social-btn">
-          <i class="fab fa-linkedin-in"></i> LinkedIn
-        </a>
-        <a href="https://github.com/Axdhxrsh" target="_blank" class="social-btn">
-          <i class="fab fa-github"></i> GitHub
-        </a>
+      <div class="contact-info">
+        <h3>Let's Connect!</h3>
+        <p>Feel free to reach out for collaborations, project inquiries, or just a friendly chat about AI and Web Development.</p>
+        
+        <!-- App Icon Style Social Links -->
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/adharsh-a-a69348360" target="_blank" class="social-btn app-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Axdhxrsh" target="_blank" class="social-btn app-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <form>
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Email">
-      <textarea rows="6" placeholder="Your Message"></textarea>
-      <button>Send Message</button>
-    </form>
-    
-</div>
-
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email">
+        <textarea rows="6" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+      </form>
+      
+  </div>
 </section>
 
 <footer>
-
-<p>© 2026 Adharsh A | CUSAT Student | Made with ❤️</p>
-
+  <p>© 2026 Adharsh A | CUSAT Student | Made with ❤️</p>
 </footer>
 
 <script src="script.js"></script>
