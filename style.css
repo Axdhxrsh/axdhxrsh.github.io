@@ -66,10 +66,9 @@ nav {
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
+/* Flattened Logo Text */
 .logo span {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-primary);
 }
 
 .logo i {
@@ -183,20 +182,58 @@ nav {
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
+/* Flattened Hero Text */
 .hero h1 span {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-primary);
   filter: drop-shadow(0 0 15px var(--accent-glow));
 }
 
-/* ADDED HEAVY GLOW TO MOVABLE TEXT */
 .hero h3 {
   font-size: 24px;
   font-weight: 700;
   color: var(--accent-primary);
   margin-bottom: 30px;
   text-shadow: 0 0 15px var(--accent-glow), 0 0 30px var(--accent-primary);
+}
+
+/* Aesthetic Minimal Tech Tags */
+.hero-tags {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+}
+
+.tech-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.02); 
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  border-radius: 8px; 
+  font-size: 13px;
+  color: var(--text-muted); 
+  font-weight: 500; 
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease; 
+}
+
+.tech-tag i {
+  color: var(--text-muted); 
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-main); 
+}
+
+.tech-tag:hover i {
+  color: var(--accent-primary); 
 }
 
 p {
@@ -206,25 +243,26 @@ p {
   font-weight: 400; 
 }
 
+/* Flattened, Modern Solid Buttons */
 .btn, button {
   display: inline-block;
-  padding: 16px 36px;
-  background: var(--accent-gradient);
-  color: #000;
-  border-radius: 50px;
+  padding: 14px 32px;
+  background: var(--accent-primary); 
+  color: #130E17; 
+  border-radius: 12px; 
   text-decoration: none;
   font-weight: 700;
   font-size: 15px;
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 8px 25px var(--accent-glow);
+  border: none;
+  box-shadow: 0 4px 15px rgba(214, 148, 179, 0.2); 
   transition: 0.3s ease;
   cursor: pointer;
 }
 
 .btn:hover, button:hover {
-  transform: translateY(-3px);
-  box-shadow: inset 0 2px 4px rgba(255,255,255,0.6), 0 12px 35px rgba(214, 148, 179, 0.7);
-  filter: brightness(1.15);
+  transform: translateY(-2px);
+  background: var(--accent-secondary); 
+  box-shadow: 0 6px 20px rgba(244, 178, 158, 0.3);
 }
 
 section {
@@ -279,7 +317,6 @@ section h2 {
   border-left: 1px solid var(--border-highlight);
   transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .card:hover {
@@ -287,7 +324,6 @@ section h2 {
   background: var(--bg-card-hover);
   border-color: rgba(214, 148, 179, 0.4);
   box-shadow: 0 15px 35px rgba(214, 148, 179, 0.15);
-  text-shadow: 0 0 20px var(--accent-primary), 0 0 30px rgba(255, 255, 255, 0.8); 
 }
 
 .typing-stat-card {
@@ -306,7 +342,6 @@ section h2 {
   padding: 18px;
   border-radius: 18px;
   box-shadow: inset 0 2px 10px rgba(255,255,255,0.05);
-  filter: drop-shadow(0 0 10px var(--accent-glow));
 }
 
 .typing-info { display: flex; flex-direction: column; }
@@ -324,7 +359,6 @@ section h2 {
   font-weight: 800;
   color: var(--text-main);
   margin: 4px 0;
-  text-shadow: 0 0 15px var(--accent-glow), 0 0 30px var(--accent-primary);
 }
 
 .typing-sub {
@@ -357,14 +391,12 @@ section h2 {
   box-shadow: 0 20px 40px rgba(214, 148, 179, 0.1);
 }
 
+/* Flattened Project Headings */
 .project-card h3 {
   margin-bottom: 15px;
   font-size: 22px;
   font-weight: 700;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(214, 148, 179, 0.4));
+  color: var(--accent-primary);
 }
 
 .contact-container {
@@ -382,13 +414,11 @@ section h2 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
+/* Flattened Contact Heading */
 .contact-info h3 {
   font-size: 28px;
   margin-bottom: 15px;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px var(--accent-glow));
+  color: var(--accent-primary);
 }
 
 .contact-info p { margin-bottom: 25px; }
@@ -416,18 +446,16 @@ section h2 {
 
 .app-icon i {
   color: var(--accent-primary);
-  filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .app-icon:hover {
-  background: var(--accent-gradient);
+  background: var(--accent-primary);
   transform: translateY(-5px);
   box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .app-icon:hover i {
-  color: var(--bg-main);
-  filter: none;
+  color: #130E17;
 }
 
 .contact form { width: 100%; }
@@ -439,7 +467,7 @@ input, textarea {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-glass);
   border-top: 1px solid var(--border-highlight);
-  border-radius: 16px;
+  border-radius: 12px;
   outline: none;
   font-size: 15px;
   color: var(--text-main);
@@ -450,7 +478,6 @@ input, textarea {
 input:focus, textarea:focus {
   border-color: var(--accent-primary);
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 20px rgba(214, 148, 179, 0.2), inset 0 2px 5px rgba(0,0,0,0.2);
 }
 
 footer {
@@ -495,10 +522,9 @@ footer {
     text-align: center;
     border-radius: 16px;
     padding: 15px 0;
-    display: none; /* Hidden by default */
+    display: none; 
   }
 
-  /* NEW: Shows menu when activated by JS */
   .nav-links.active {
     display: flex;
   }
@@ -515,6 +541,11 @@ footer {
   
   .hero-image {
     order: -1; 
+    justify-content: center;
+  }
+  
+  /* Centered tags for mobile */
+  .hero-tags {
     justify-content: center;
   }
 
@@ -535,41 +566,4 @@ footer {
   .social-links {
     justify-content: center;
   }
-}
-/* NEW: Aesthetic Tech Tags for Hero Section */
-.hero-tags {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 35px;
-  flex-wrap: wrap;
-}
-
-.tech-tag {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border-highlight);
-  border-radius: 50px;
-  font-size: 13px;
-  color: var(--text-main);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: inset 0 2px 5px rgba(255,255,255,0.05), 0 4px 15px rgba(0,0,0,0.2);
-  transition: 0.3s ease;
-}
-
-.tech-tag i {
-  color: var(--accent-primary);
-  font-size: 16px;
-  filter: drop-shadow(0 0 5px var(--accent-glow));
-}
-
-.tech-tag:hover {
-  border-color: var(--accent-primary);
-  background: rgba(214, 148, 179, 0.08);
-  box-shadow: 0 5px 20px var(--accent-glow);
-  transform: translateY(-3px);
-}
+              }
