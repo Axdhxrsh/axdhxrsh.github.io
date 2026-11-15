@@ -96,11 +96,11 @@ nav {
   color: var(--accent-primary);
 }
 
-/* HERO SECTION - RESTRUCTURED */
+/* HERO SECTION */
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: row; /* Text on left, image on right */
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   padding: 160px 10% 80px;
@@ -111,7 +111,7 @@ nav {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns text cleanly to the left */
+  align-items: flex-start;
   z-index: 3; 
 }
 
@@ -173,37 +173,36 @@ nav {
 .hero-image {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* Pushes the image to the right */
+  justify-content: flex-end;
   align-items: center;
   z-index: 2; 
 }
 
-/* NEW ORGANIC BLOB SHAPE */
+/* FIXED SHAPE WRAPPER - No more moving animation! */
 .blob-wrapper {
   position: relative;
+  width: 320px;
+  height: 400px;
+  /* Creates a beautiful, static Arch shape */
+  border-radius: 160px 160px 16px 16px; 
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 15px 40px var(--accent-glow);
+  overflow: hidden; /* Clips your photo perfectly to the shape */
+  background: var(--bg-card); /* Fallback background */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Photo perfectly fills the static shape */
 .profile-img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background: rgba(226, 180, 130, 0.05); /* Slight gold fill behind the cutout */
-  border: 2px solid var(--accent-primary); /* Glowing border matching the shape */
-  box-shadow: 0 0 40px var(--accent-glow), inset 0 0 20px var(--accent-glow);
-  
-  /* This creates the asymmetric, organic shape */
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: blobMorph 8s ease-in-out infinite;
-  z-index: 2;
-}
-
-@keyframes blobMorph {
-  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  border: none;
+  animation: none;
+  box-shadow: none;
+  border-radius: 0; 
 }
 
 p {
@@ -426,19 +425,21 @@ footer {
     text-align: center;
   }
   
-  .hero-content {
-    align-items: center; /* Center text on mobile */
-  }
-
+  .hero-content { align-items: center; }
   .hero h1 { font-size: 45px; text-align: center; }
   .hero-tags { justify-content: center; }
   
   .hero-image {
-    order: -1; /* Pushes image to the top on mobile */
+    order: -1; 
     justify-content: center;
   }
   
-  .profile-img { width: 280px; height: 280px; }
+  /* Shrinks the shape down on mobile devices */
+  .blob-wrapper {
+    width: 250px;
+    height: 310px;
+    border-radius: 125px 125px 12px 12px; 
+  }
   
   .typing-stat-card { grid-column: span 1; text-align: center; flex-direction: column; }
   .contact-container { grid-template-columns: 1fr; padding: 30px; }
