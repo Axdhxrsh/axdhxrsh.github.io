@@ -219,15 +219,16 @@ nav {
   z-index: 3; 
 }
 
+/* FIXED SHAPE WRAPPER - The Fashion Pill */
 .blob-wrapper {
   position: relative;
-  width: 320px;
-  height: 400px;
-  border-radius: 160px 160px 16px 16px; 
+  width: 300px;
+  height: 440px;
+  border-radius: 150px; /* Perfect capsule/pill shape */
   border: 2px solid var(--accent-primary);
   box-shadow: 0 15px 40px var(--accent-glow-strong);
   overflow: hidden; 
-  background: var(--bg-main); /* Matches the right side of the split perfectly */
+  background: var(--bg-main); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,7 +239,11 @@ nav {
   height: 100%;
   object-fit: cover;
   border: none;
+  animation: none;
+  box-shadow: none;
+  border-radius: 0; 
 }
+
 
 p {
   line-height: 1.9;
@@ -486,10 +491,11 @@ footer {
   }
   
   .blob-wrapper {
-    width: 250px;
-    height: 310px;
-    border-radius: 125px 125px 12px 12px; 
+    width: 240px;
+    height: 350px;
+    border-radius: 120px; /* Scaled-down pill for mobile */
   }
+  
   
   .typing-stat-card { grid-column: span 1; text-align: center; flex-direction: column; }
   .contact-container { grid-template-columns: 1fr; padding: 30px; }
