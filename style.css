@@ -1,21 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
+  /* Main Website Background */
   --bg-main: #2D1E2F; 
   
-  /* Lighter, softer tones for the cards */
-  --bg-card: #402B42;
+  /* Section-Specific Depths */
+  --bg-card-light: #422D45; /* Lighter tone for About */
+  --bg-card-medium: #38263A; /* Medium tone for Skills/Projects */
+  --bg-card-dark: #1E1420; /* Darkest tone for Contact */
+  
   --bg-card-hover: #4F3552;
   
   --accent-primary: #E2B482;
   --accent-secondary: #C89662;
-  --accent-glow: rgba(226, 180, 130, 0.4); 
+  
+  /* Stronger ambient gold glow for everywhere */
+  --accent-glow-strong: rgba(226, 180, 130, 0.4); 
+  --accent-glow-soft: rgba(226, 180, 130, 0.15); 
   
   --text-main: #F9F6F0;
-  --text-muted: #A89F9E; 
+  --text-muted: #D1C5CD; /* Brightened slightly for better contrast */
   
   --border-glass: rgba(255, 255, 255, 0.08);
-  --border-highlight: rgba(255, 255, 255, 0.15); 
+  --border-gold: rgba(226, 180, 130, 0.25); 
 }
 
 * {
@@ -67,7 +74,7 @@ nav {
 
 .logo span, .logo i {
   color: var(--accent-primary);
-  filter: drop-shadow(0 0 8px var(--accent-glow));
+  filter: drop-shadow(0 0 8px var(--accent-glow-strong));
 }
 
 .nav-links {
@@ -88,7 +95,7 @@ nav {
 
 .nav-links a:hover {
   color: var(--accent-primary);
-  text-shadow: 0 0 10px var(--accent-glow);
+  text-shadow: 0 0 10px var(--accent-glow-strong);
 }
 
 .menu-btn {
@@ -155,7 +162,7 @@ nav {
   gap: 8px;
   padding: 8px 18px;
   background: transparent; 
-  border: 1px solid var(--border-highlight); 
+  border: 1px solid var(--border-glass); 
   border-radius: 4px;
   font-size: 11px;
   text-transform: uppercase;
@@ -169,7 +176,7 @@ nav {
 .tech-tag:hover {
   border-color: var(--accent-primary);
   color: var(--text-main); 
-  box-shadow: 0 0 15px var(--accent-glow);
+  box-shadow: 0 0 15px var(--accent-glow-strong);
 }
 
 .hero-image {
@@ -187,7 +194,7 @@ nav {
   height: 400px;
   border-radius: 160px 160px 16px 16px; 
   border: 2px solid var(--accent-primary);
-  box-shadow: 0 15px 40px var(--accent-glow);
+  box-shadow: 0 15px 40px var(--accent-glow-strong);
   overflow: hidden; 
   background: var(--bg-main); 
   display: flex;
@@ -216,22 +223,22 @@ p {
   display: inline-block;
   padding: 16px 36px;
   background: var(--accent-primary); 
-  color: #150E10; 
+  color: #1E1420; 
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 700;
   font-size: 12px;
   border: none;
-  box-shadow: 0 4px 20px var(--accent-glow); 
+  box-shadow: 0 0 25px var(--accent-glow-strong); 
   transition: 0.3s ease;
   cursor: pointer;
 }
 
 .btn:hover, button:hover {
   transform: translateY(-3px);
-  background: var(--accent-secondary); 
-  box-shadow: 0 8px 25px rgba(226, 180, 130, 0.6); 
+  background: var(--text-main); 
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4); 
 }
 
 section {
@@ -254,12 +261,13 @@ section h2 {
   width: 100%;
 }
 
+/* ABOUT SECTION - Lighter/Darker Gradient */
 .about-content {
-  background: var(--bg-card);
+  background: linear-gradient(145deg, var(--bg-card-light), var(--bg-card-medium));
   padding: 50px;
   border-radius: 4px;
-  border: 1px solid rgba(226, 180, 130, 0.3); 
-  box-shadow: 0 10px 30px rgba(226, 180, 130, 0.15); 
+  border: 1px solid var(--border-gold); 
+  box-shadow: 0 0 35px var(--accent-glow-soft); /* Permanent glowing effect */
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -278,18 +286,20 @@ section h2 {
 .skill-container { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
 .project-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
+/* SKILLS & PROJECTS - Medium Tone */
 .card, .project-card {
-  background: var(--bg-card);
+  background: var(--bg-card-medium);
   padding: 30px;
   border-radius: 4px;
-  border: 1px solid rgba(226, 180, 130, 0.2); 
-  box-shadow: 0 0 15px rgba(226, 180, 130, 0.15); 
+  border: 1px solid var(--border-gold); 
+  box-shadow: 0 0 20px var(--accent-glow-soft); /* Glowing effect everywhere */
   transition: 0.3s ease;
 }
 
 .card:hover, .project-card:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 15px 35px var(--accent-glow); 
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 40px var(--accent-glow-strong); 
   transform: translateY(-5px);
 }
 
@@ -316,6 +326,7 @@ section h2 {
   grid-column: span 2;
   text-align: left;
   border-color: var(--accent-primary);
+  background: linear-gradient(145deg, var(--bg-card-medium), rgba(226, 180, 130, 0.08));
 }
 
 .typing-icon {
@@ -324,6 +335,7 @@ section h2 {
   background: var(--accent-primary);
   padding: 15px;
   border-radius: 4px;
+  box-shadow: 0 0 15px var(--accent-glow-strong);
 }
 
 .typing-info { display: flex; flex-direction: column; }
@@ -331,15 +343,16 @@ section h2 {
 .typing-speed { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--text-main); }
 .typing-sub { font-size: 11px; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 1px;}
 
+/* CONTACT SECTION - Darkest Tone for Contrast */
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  background: var(--bg-card);
+  background: var(--bg-card-dark); /* Deep, dark tone */
   padding: 50px;
   border-radius: 4px;
-  border: 1px solid var(--border-glass);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 0 40px var(--accent-glow-soft); /* Powerful glow surrounding the dark card */
 }
 
 .contact-info h3 {
@@ -356,25 +369,28 @@ section h2 {
   align-items: center;
   justify-content: center;
   width: 45px; height: 45px;
-  border: 1px solid var(--border-highlight);
+  border: 1px solid var(--border-gold);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 4px;
   color: var(--accent-primary);
   font-size: 18px;
   text-decoration: none;
   transition: 0.3s ease;
+  box-shadow: 0 0 10px var(--accent-glow-soft);
 }
 
 .app-icon:hover {
   background: var(--accent-primary);
-  color: var(--bg-card);
-  box-shadow: 0 5px 15px var(--accent-glow);
+  color: var(--bg-card-dark);
+  box-shadow: 0 0 20px var(--accent-glow-strong);
+  transform: translateY(-3px);
 }
 
 input, textarea {
   width: 100%;
   margin-bottom: 20px;
   padding: 16px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-glass);
   border-radius: 4px;
   outline: none;
@@ -384,12 +400,15 @@ input, textarea {
   transition: 0.3s ease;
 }
 
-input:focus, textarea:focus { border-color: var(--accent-primary); }
+input:focus, textarea:focus { 
+  border-color: var(--accent-primary); 
+  box-shadow: 0 0 15px var(--accent-glow-soft);
+}
 
 footer {
   padding: 40px;
   text-align: center;
-  background: var(--bg-card);
+  background: var(--bg-card-dark);
   border-top: 1px solid var(--border-glass);
   color: var(--text-muted);
   font-size: 12px;
@@ -409,11 +428,12 @@ footer {
   
   .nav-links {
     position: absolute; top: 70px; right: 5%; width: 220px;
-    background: var(--bg-card);
+    background: var(--bg-card-dark);
     flex-direction: column; text-align: center;
     padding: 20px 0; display: none;
-    border: 1px solid var(--border-glass);
+    border: 1px solid var(--border-gold);
     border-radius: 4px;
+    box-shadow: 0 0 30px var(--accent-glow-strong);
   }
   .nav-links.active { display: flex; }
   .nav-links li { margin: 15px 0; }
