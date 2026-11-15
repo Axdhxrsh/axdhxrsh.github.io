@@ -34,7 +34,6 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -97,62 +96,23 @@ nav {
   color: var(--accent-primary);
 }
 
-/* HERO SECTION */
+/* HERO SECTION - RESTRUCTURED */
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column; 
-  justify-content: center;
+  flex-direction: row; /* Text on left, image on right */
+  justify-content: space-between;
   align-items: center;
   padding: 160px 10% 80px;
-  position: relative;
-  text-align: center;
-}
-
-/* Giant Background Text */
-.hero-bg-text {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%) scaleY(1.3); 
-  font-family: 'Playfair Display', serif;
-  font-size: 22vw;
-  font-weight: 900;
-  color: rgba(226, 180, 130, 0.15); /* Faint Champagne Gold */
-  z-index: 1; /* Sits behind the image */
-  pointer-events: none;
-  letter-spacing: -2px;
-  white-space: nowrap;
-}
-
-.hero-image {
-  z-index: 2; /* Image sits IN FRONT of the text */
-  margin-bottom: 20px;
-}
-
-.profile-wrapper { position: relative; display: inline-block; }
-
-/* Removed the box shape. Now a pure cutout overlapping the text. */
-.profile-img {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  object-fit: contain;
-  z-index: 2;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5)); /* Adds depth to the cutout person */
-}
-
-/* Hid the glow ring as it ruins the cutout effect */
-.profile-wrapper .glow-ring {
-  display: none;
+  gap: 50px;
 }
 
 .hero-content {
-  z-index: 3; 
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Aligns text cleanly to the left */
+  z-index: 3; 
 }
 
 .hero h1 {
@@ -161,6 +121,7 @@ nav {
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .hero h1 span {
@@ -183,7 +144,7 @@ nav {
   gap: 15px;
   margin-bottom: 40px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .tech-tag {
@@ -207,6 +168,42 @@ nav {
   border-color: var(--accent-primary);
   color: var(--text-main); 
   box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Pushes the image to the right */
+  align-items: center;
+  z-index: 2; 
+}
+
+/* NEW ORGANIC BLOB SHAPE */
+.blob-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  background: rgba(226, 180, 130, 0.05); /* Slight gold fill behind the cutout */
+  border: 2px solid var(--accent-primary); /* Glowing border matching the shape */
+  box-shadow: 0 0 40px var(--accent-glow), inset 0 0 20px var(--accent-glow);
+  
+  /* This creates the asymmetric, organic shape */
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blobMorph 8s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes blobMorph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
 }
 
 p {
@@ -258,13 +255,12 @@ section h2 {
   width: 100%;
 }
 
-/* UPGRADED ABOUT SECTION */
 .about-content {
   background: var(--bg-card);
   padding: 50px;
   border-radius: 4px;
-  border: 1px solid rgba(226, 180, 130, 0.3); /* Golden border */
-  box-shadow: 0 10px 30px rgba(226, 180, 130, 0.15); /* Permanent Golden Glow */
+  border: 1px solid rgba(226, 180, 130, 0.3); 
+  box-shadow: 0 10px 30px rgba(226, 180, 130, 0.15); 
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -272,7 +268,7 @@ section h2 {
 
 .about-content p { 
   font-size: 16px; 
-  color: var(--text-main); /* Bright White Text */
+  color: var(--text-main); 
   font-weight: 400;
 }
 
@@ -283,19 +279,18 @@ section h2 {
 .skill-container { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
 .project-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-/* SKILLS SECTION: Light permanent glow added */
 .card, .project-card {
   background: var(--bg-card);
   padding: 30px;
   border-radius: 4px;
-  border: 1px solid rgba(226, 180, 130, 0.2); /* Visible gold border */
-  box-shadow: 0 0 15px rgba(226, 180, 130, 0.15); /* Permanent ambient glow */
+  border: 1px solid rgba(226, 180, 130, 0.2); 
+  box-shadow: 0 0 15px rgba(226, 180, 130, 0.15); 
   transition: 0.3s ease;
 }
 
 .card:hover, .project-card:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 15px 35px var(--accent-glow); /* Stronger glow on hover */
+  box-shadow: 0 15px 35px var(--accent-glow); 
   transform: translateY(-5px);
 }
 
@@ -409,6 +404,7 @@ footer {
 }
 @keyframes blinkCursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
+/* MOBILE RESPONSIVENESS */
 @media(max-width: 768px) {
   .menu-btn { display: block; }
   
@@ -424,13 +420,25 @@ footer {
   .nav-links li { margin: 15px 0; }
 
   .hero {
+    flex-direction: column;
     padding-top: 120px;
+    gap: 40px;
+    text-align: center;
   }
   
-  .hero-bg-text { top: 30%; font-size: 28vw; }
-  .profile-img { max-width: 250px; }
+  .hero-content {
+    align-items: center; /* Center text on mobile */
+  }
+
+  .hero h1 { font-size: 45px; text-align: center; }
+  .hero-tags { justify-content: center; }
   
-  .hero h1 { font-size: 40px; }
+  .hero-image {
+    order: -1; /* Pushes image to the top on mobile */
+    justify-content: center;
+  }
+  
+  .profile-img { width: 280px; height: 280px; }
   
   .typing-stat-card { grid-column: span 1; text-align: center; flex-direction: column; }
   .contact-container { grid-template-columns: 1fr; padding: 30px; }
