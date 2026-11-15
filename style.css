@@ -1,25 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Main Website Background */
   --bg-main: #2D1E2F; 
-  
-  /* Section-Specific Depths */
-  --bg-card-light: #422D45; /* Lighter tone for About */
-  --bg-card-medium: #38263A; /* Medium tone for Skills/Projects */
-  --bg-card-dark: #1E1420; /* Darkest tone for Contact */
-  
+  --bg-card-light: #422D45; 
+  --bg-card-medium: #38263A; 
+  --bg-card-dark: #1E1420; 
   --bg-card-hover: #4F3552;
   
   --accent-primary: #E2B482;
   --accent-secondary: #C89662;
   
-  /* Stronger ambient gold glow for everywhere */
   --accent-glow-strong: rgba(226, 180, 130, 0.4); 
   --accent-glow-soft: rgba(226, 180, 130, 0.15); 
   
   --text-main: #F9F6F0;
-  --text-muted: #D1C5CD; /* Brightened slightly for better contrast */
+  --text-muted: #D1C5CD; 
   
   --border-glass: rgba(255, 255, 255, 0.08);
   --border-gold: rgba(226, 180, 130, 0.25); 
@@ -47,7 +42,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(45, 30, 47, 0.8);
+  background: rgba(30, 20, 32, 0.7); /* Darker header to blend with split */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 999;
@@ -105,7 +100,9 @@ nav {
   color: var(--accent-primary);
 }
 
-/* HERO SECTION */
+/* =========================================
+   NEW HERO SECTION: Split Screen + Aurora 
+   ========================================= */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -114,6 +111,41 @@ nav {
   align-items: center;
   padding: 160px 10% 80px;
   gap: 50px;
+  position: relative;
+  overflow: hidden;
+  
+  /* The Sharp 50/50 Split Screen */
+  background: linear-gradient(to right, var(--bg-card-dark) 50%, var(--bg-main) 50%);
+}
+
+/* Aurora Mesh Glows */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(226, 180, 130, 0.15) 0%, transparent 70%);
+  top: -10%; left: 30%;
+  z-index: 1;
+  pointer-events: none;
+  animation: floatAurora 12s infinite alternate ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(79, 53, 82, 0.3) 0%, transparent 70%);
+  bottom: -20%; right: 10%;
+  z-index: 1;
+  pointer-events: none;
+  animation: floatAurora 15s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatAurora {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-60px, 80px); }
 }
 
 .hero-content {
@@ -161,7 +193,7 @@ nav {
   align-items: center;
   gap: 8px;
   padding: 8px 18px;
-  background: transparent; 
+  background: rgba(255,255,255,0.02); 
   border: 1px solid var(--border-glass); 
   border-radius: 4px;
   font-size: 11px;
@@ -184,10 +216,9 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  z-index: 2; 
+  z-index: 3; 
 }
 
-/* FIXED SHAPE WRAPPER */
 .blob-wrapper {
   position: relative;
   width: 320px;
@@ -196,7 +227,7 @@ nav {
   border: 2px solid var(--accent-primary);
   box-shadow: 0 15px 40px var(--accent-glow-strong);
   overflow: hidden; 
-  background: var(--bg-main); 
+  background: var(--bg-main); /* Matches the right side of the split perfectly */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,9 +238,6 @@ nav {
   height: 100%;
   object-fit: cover;
   border: none;
-  animation: none;
-  box-shadow: none;
-  border-radius: 0; 
 }
 
 p {
@@ -241,6 +269,10 @@ p {
   box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4); 
 }
 
+/* =========================================
+   REST OF THE PAGE
+   ========================================= */
+
 section {
   padding: 100px 10%;
   position: relative;
@@ -261,13 +293,12 @@ section h2 {
   width: 100%;
 }
 
-/* ABOUT SECTION - Lighter/Darker Gradient */
 .about-content {
   background: linear-gradient(145deg, var(--bg-card-light), var(--bg-card-medium));
   padding: 50px;
   border-radius: 4px;
   border: 1px solid var(--border-gold); 
-  box-shadow: 0 0 35px var(--accent-glow-soft); /* Permanent glowing effect */
+  box-shadow: 0 0 35px var(--accent-glow-soft); 
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -286,13 +317,12 @@ section h2 {
 .skill-container { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
 .project-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-/* SKILLS & PROJECTS - Medium Tone */
 .card, .project-card {
   background: var(--bg-card-medium);
   padding: 30px;
   border-radius: 4px;
   border: 1px solid var(--border-gold); 
-  box-shadow: 0 0 20px var(--accent-glow-soft); /* Glowing effect everywhere */
+  box-shadow: 0 0 20px var(--accent-glow-soft); 
   transition: 0.3s ease;
 }
 
@@ -343,16 +373,15 @@ section h2 {
 .typing-speed { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--text-main); }
 .typing-sub { font-size: 11px; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 1px;}
 
-/* CONTACT SECTION - Darkest Tone for Contrast */
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  background: var(--bg-card-dark); /* Deep, dark tone */
+  background: var(--bg-card-dark); 
   padding: 50px;
   border-radius: 4px;
   border: 1px solid var(--border-gold);
-  box-shadow: 0 0 40px var(--accent-glow-soft); /* Powerful glow surrounding the dark card */
+  box-shadow: 0 0 40px var(--accent-glow-soft); 
 }
 
 .contact-info h3 {
@@ -443,6 +472,8 @@ footer {
     padding-top: 120px;
     gap: 40px;
     text-align: center;
+    /* Adjust split screen for mobile: Plum Top, Espresso Bottom */
+    background: linear-gradient(to bottom, var(--bg-main) 45%, var(--bg-card-dark) 45%);
   }
   
   .hero-content { align-items: center; }
