@@ -7,8 +7,8 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Fonts: Added Playfair Display for that high-end editorial look -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- FontAwesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,6 +34,8 @@
 </header>
 
 <section class="hero" id="home">
+  <!-- NEW: Giant Background Text mimicking the first image -->
+  <div class="hero-bg-text">PORTFOLIO</div>
   
   <div class="hero-content">
     <h1>Hello, I'm <span>Adharsh A</span></h1>
@@ -42,7 +44,6 @@
       <span class="typewriter-text"></span><span class="cursor">|</span>
     </h3>
 
-    <!-- Aesthetic Tech Tags to fill the empty space -->
     <div class="hero-tags">
       <span class="tech-tag"><i class="fa-solid fa-microchip"></i> AI Student</span>
       <span class="tech-tag"><i class="fa-solid fa-code"></i> Web Dev</span>
@@ -58,7 +59,6 @@
       <img src="IMG_20260513_085246_114.jpg" alt="Adharsh A" class="profile-img" />
     </div>
   </div>
-
 </section>
 
 <section id="about" class="about reveal">
@@ -104,12 +104,10 @@
   <h2>Projects</h2>
   <div class="project-grid">
 
-            <!-- Updated Monkeytype Project Card -->
       <div class="project-card">
         <h3><i class="fas fa-keyboard"></i> Touch Typing Stats</h3>
         <p>Check out my live typing statistics on Monkeytype. I regularly practice across multiple time formats to build speed, muscle memory, and accuracy.</p>
         
-        <!-- Minimal Format Grid (No hardcoded WPM) -->
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin: 20px 0; background: rgba(0,0,0,0.2); padding: 15px 10px; border-radius: 12px; text-align: center;">
           <div><div style="font-size: 15px; font-weight: bold; color: var(--accent-primary);">15s</div><div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Sprint</div></div>
           <div><div style="font-size: 15px; font-weight: bold; color: var(--accent-primary);">30s</div><div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Short</div></div>
@@ -119,7 +117,6 @@
 
         <a href="https://monkeytype.com/profile/CyberStrange" target="_blank" class="btn" style="padding: 10px 20px; font-size: 13px; margin-top: 0; width: 100%; text-align: center;">View Live Profile</a>
       </div>
-      
 
       <div class="project-card">
       <h3>Portfolio Website</h3>
@@ -154,22 +151,18 @@
         <p>Feel free to reach out for collaborations, project inquiries, or just a friendly chat about AI and Web Development.</p>
         
         <div class="social-links">
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/adharsh-a-a69348360" target="_blank" class="social-btn app-icon" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <!-- GitHub -->
           <a href="https://github.com/Axdhxrsh" target="_blank" class="social-btn app-icon" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
-          <!-- Gmail Icon -->
           <a href="mailto:adharshaa12122007@gmail.com" class="social-btn app-icon" aria-label="Email">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div> 
       </div>
 
-      <!-- Functional Form using Formspree -->
       <form action="https://formspree.io/f/mkjroabe" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Email" required>
