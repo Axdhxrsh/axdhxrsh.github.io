@@ -2,8 +2,10 @@
 
 :root {
   --bg-main: #2D1E2F; 
-  --bg-card: #150E10;
-  --bg-card-hover: #1F1517;
+  
+  /* Lighter, softer tones for the cards */
+  --bg-card: #402B42;
+  --bg-card-hover: #4F3552;
   
   --accent-primary: #E2B482;
   --accent-secondary: #C89662;
@@ -178,23 +180,21 @@ nav {
   z-index: 2; 
 }
 
-/* FIXED SHAPE WRAPPER - No more moving animation! */
+/* FIXED SHAPE WRAPPER */
 .blob-wrapper {
   position: relative;
   width: 320px;
   height: 400px;
-  /* Creates a beautiful, static Arch shape */
   border-radius: 160px 160px 16px 16px; 
   border: 2px solid var(--accent-primary);
   box-shadow: 0 15px 40px var(--accent-glow);
-  overflow: hidden; /* Clips your photo perfectly to the shape */
-  background: var(--bg-card); /* Fallback background */
+  overflow: hidden; 
+  background: var(--bg-main); 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Photo perfectly fills the static shape */
 .profile-img {
   width: 100%;
   height: 100%;
@@ -320,7 +320,7 @@ section h2 {
 
 .typing-icon {
   font-size: 24px;
-  color: var(--bg-card);
+  color: var(--bg-main);
   background: var(--accent-primary);
   padding: 15px;
   border-radius: 4px;
@@ -434,7 +434,6 @@ footer {
     justify-content: center;
   }
   
-  /* Shrinks the shape down on mobile devices */
   .blob-wrapper {
     width: 250px;
     height: 310px;
