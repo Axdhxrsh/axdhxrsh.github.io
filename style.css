@@ -1,12 +1,3 @@
-To get that high-end, editorial, "magazine" layout from the first image while keeping the colors and glows you like, we need to make a few specific design choices:
- * The Shape Language: The first image uses sharp corners, fine lines, and structured grids. We will change your heavily rounded cards into sleek, sharp-edged editorial boxes.
- * The Typography: We will use Playfair Display (an elegant Serif) for big headings and stretched background text, and Montserrat (a clean, high-fashion Sans-Serif) for the reading text and small all-caps labels.
- * The Avatar: Instead of a circle or square, we will shape your profile picture into an elegant arch (a massive trend in modern UI/UX design that matches the first image's vibe perfectly).
- * The Color Palette:
-   * Main Background: Obsidian Plum (from your current site / Image 2).
-   * Cards/Secondary: Deep Espresso / Charcoal (from Image 1).
-   * Accent/Glow: Champagne Gold. This provides a stunning, high-contrast pop against both the purple and the dark brown without looking like a gaming website.
-You do not need to change your HTML. Just replace your entire style.css file with this completely revamped editorial stylesheet:
 /* Importing High-End Editorial Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -450,4 +441,3 @@ footer {
   .contact-container { grid-template-columns: 1fr; padding: 30px; }
   .social-links { justify-content: center; }
 }
-
