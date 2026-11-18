@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
+  /* Main Website Background */
   --bg-main: #2D1E2F; 
+  
+  /* Section-Specific Depths */
   --bg-card-light: #422D45; 
   --bg-card-medium: #2B1D2D; 
   --bg-card-dark: #1E1420; 
-  --bg-card-hover: #4F3552;
+  
+  --bg-card-hover: #3D293F;
   
   --accent-primary: #E2B482;
   --accent-secondary: #C89662;
@@ -42,7 +46,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(30, 20, 32, 0.7); /* Darker header to blend with split */
+  background: rgba(30, 20, 32, 0.7); 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 999;
@@ -101,7 +105,7 @@ nav {
 }
 
 /* =========================================
-   NEW HERO SECTION: Split Screen + Aurora 
+   HERO SECTION: Split Screen + Aurora 
    ========================================= */
 .hero {
   min-height: 100vh;
@@ -113,12 +117,9 @@ nav {
   gap: 50px;
   position: relative;
   overflow: hidden;
-  
-  /* The Sharp 50/50 Split Screen */
   background: linear-gradient(to right, var(--bg-card-dark) 50%, var(--bg-main) 50%);
 }
 
-/* Aurora Mesh Glows */
 .hero::before {
   content: "";
   position: absolute;
@@ -219,31 +220,33 @@ nav {
   z-index: 3; 
 }
 
-/* FIXED SHAPE WRAPPER - The Fashion Pill */
+/* =========================================
+   FIXED: TRUE MAGAZINE CUTOUT
+   ========================================= */
 .blob-wrapper {
   position: relative;
-  width: 300px;
-  height: 440px;
-  border-radius: 150px; /* Perfect capsule/pill shape */
-  border: 2px solid var(--accent-primary);
-  box-shadow: 0 15px 40px var(--accent-glow-strong);
-  overflow: hidden; 
-  background: var(--bg-main); 
+  width: 380px; /* Perfectly sized for the cutout */
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  border: none; /* Removed the coffin frame */
+  background: transparent;
+  box-shadow: none;
 }
 
 .profile-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
   border: none;
-  animation: none;
-  box-shadow: none;
-  border-radius: 0; 
+  /* 3D shadow directly on you */
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6)); 
+  /* Smooth fade out at the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
 }
-
 
 p {
   line-height: 1.9;
@@ -477,7 +480,6 @@ footer {
     padding-top: 120px;
     gap: 40px;
     text-align: center;
-    /* Adjust split screen for mobile: Plum Top, Espresso Bottom */
     background: linear-gradient(to bottom, var(--bg-main) 45%, var(--bg-card-dark) 45%);
   }
   
@@ -491,11 +493,9 @@ footer {
   }
   
   .blob-wrapper {
-    width: 240px;
-    height: 350px;
-    border-radius: 120px; /* Scaled-down pill for mobile */
+    width: 280px; /* perfectly sizes the mobile cutout */
+    height: auto;
   }
-  
   
   .typing-stat-card { grid-column: span 1; text-align: center; flex-direction: column; }
   .contact-container { grid-template-columns: 1fr; padding: 30px; }
